@@ -37,21 +37,34 @@
 									    </tr>
 									  </thead>
 									  <tbody>
-									    <tr v-for="value in imoveis">
 									  	<template v-if="imoveis.length > 1">
-									      <td  class="text-center">{{value.ID}}</td>
-									      <td  class="text-center">{{value.NOME}}</td>
-									      <td  class="text-center">{{value.CEP}}</td>
-									      <td  class="text-center">{{value.UF}}</td>
-									      <td  class="text-center">{{value.CIDADE}}</td>
-									      <td  class="text-center">{{value.ENDERECO}}</td>
-									      <td  class="text-center">{{value.BAIRRO}}</td>
-									      <td  class="text-center">{{value.NUMERO}}</td>
-									      <td  class="text-center">{{value.COMPLEMENTO}}</td>															      
-									      <td  class="text-center"><button class="btn-sm btn-warning" @click="loadDataForUpdate(value)">Edit</button></td>		      
-									      <td  class="text-center"><button class="btn-sm btn-danger" @click="doRemove(value)">Remove</button></td>	
-									     </template>
-									    </tr>
+										    <tr v-for="value in imoveis">
+											      <td  class="text-center">{{value.ID}}</td>
+											      <td  class="text-center">{{value.NOME}}</td>
+											      <td  class="text-center">{{value.CEP}}</td>
+											      <td  class="text-center">{{value.UF}}</td>
+											      <td  class="text-center">{{value.CIDADE}}</td>
+											      <td  class="text-center">{{value.ENDERECO}}</td>
+											      <td  class="text-center">{{value.BAIRRO}}</td>
+											      <td  class="text-center">{{value.NUMERO}}</td>
+											      <td  class="text-center">{{value.COMPLEMENTO}}</td>															      
+											      <td  class="text-center"><button class="btn-sm btn-warning" @click="loadDataForUpdate(value)">Edit</button></td>		      
+											      <td  class="text-center"><button class="btn-sm btn-danger" @click="doRemove(value)">Remove</button></td>
+										    </tr>	
+									    </template>
+									    <template v-else>
+										      <td  class="text-center">{{imoveis.ID}}</td>
+										      <td  class="text-center">{{imoveis.NOME}}</td>
+										      <td  class="text-center">{{imoveis.CEP}}</td>
+										      <td  class="text-center">{{imoveis.UF}}</td>
+										      <td  class="text-center">{{imoveis.CIDADE}}</td>
+										      <td  class="text-center">{{imoveis.ENDERECO}}</td>
+										      <td  class="text-center">{{imoveis.BAIRRO}}</td>
+										      <td  class="text-center">{{imoveis.NUMERO}}</td>
+										      <td  class="text-center">{{imoveis.COMPLEMENTO}}</td>															      
+										      <td  class="text-center"><button class="btn-sm btn-warning" @click="loadDataForUpdate(value)">Edit</button></td>		      
+										      <td  class="text-center"><button class="btn-sm btn-danger" @click="doRemove(value)">Remove</button></td>	
+								     	</template>
 									  </tbody>
 									</table>
 								</div>		
