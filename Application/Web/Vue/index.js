@@ -7,6 +7,7 @@ var vm = new Vue({
 			showAdd: false,
 			endereco: false,
 			habilitarCep: false,
+			imoveis_exists: false,
 			imovel:{},
 			imoveis:{}
 		},
@@ -85,8 +86,13 @@ var vm = new Vue({
 			get() {		
 				let p = new Promise((resolve, reject) => {	
 					axios.get("Application/Process/ImovelProcess.php?action=get").then(function(response) {
-						if(!response.data.error) {
-							vm.imoveis = response.data.imovel;
+						if(!response.data.error) {									
+							if (vm.imoveis = response.data.imovel) {
+								vm.imoveis_exists = true;
+							}
+							else {
+								vm.imoveis_exists = false;
+							}							
 						}
 					});
                	});

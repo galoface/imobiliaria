@@ -132,8 +132,8 @@
 		{
 			try {	
 				$imovel = $this->_imovelRepository->load($get);
-				if (!$imovel->_original_data) {
-					throw new Exception("Error Processing Request");					
+				if (!isset($imovel->_original_data)) {
+					return false;					
 				}
 
 				return $imovel->_original_data;
